@@ -1,0 +1,434 @@
+;Punto 1
+(define(mayor x y)
+  (cond((> x y)x)
+       ((> y x) y)
+       (else "Iguales")
+       )
+  )
+(define(principal1)
+  (begin
+    (display "Ingrese un numero: ")
+    (define x(read))
+    (display "Ingrese un numero: ")
+    (define y(read))
+    (display "El mayor es: ")
+    (mayor x y)
+    )
+  )
+
+
+
+;Punto 2
+(define(asen x y)
+  (cond((> x y) (displayln y)(displayln x))
+       ((> y x) (displayln x)(displayln y))
+       (else (display "Iguales"))
+       )
+  )
+(define(principal2)
+  (begin
+    (display "Ingrese un numero: ")
+    (define x(read))
+    (display "Ingrese un numero: ")
+    (define y(read))
+    (displayln "El mayor es: ")
+    (asen x y)
+    )
+  )
+
+
+;Punto 3
+(define (post x)
+  (cond((> x 0) (display "Positivo"))
+       ((< x 0)(* x x))
+       )
+  )
+(define(principal3)
+  (begin
+    (display "Ingrese un numero: ")
+    (define x(read))
+    (post x)
+    )
+  )
+
+
+;Punto 4
+
+(define(comp x)
+  (cond((> x 100000) (* x 0.2))
+       ((< x 100000) x)
+       )
+  )
+(define(principal4)
+  (begin
+    (displayln "Ingrese el valor de su compra: ")
+    (define x(read))
+    (displayln "El total de su compra es: ")
+    (comp x)
+    )
+  )
+
+
+;Punto 5
+
+(define (total x)
+  (cond((>= x 3)(*(* x 15000)0.2))
+       ((< x 3)(*(* x 15000)0.1))
+       )
+  )
+(define(principal5)
+  (begin
+    (display "Ingrese el numero de camisas: ")
+    (define x(read))
+    (newline)
+    (displayln "El valor total es: ")
+    (total x)
+    )
+  )
+
+       
+
+
+
+;problema 6
+
+(define (preciollanta x)
+  (cond ((< x 5) (* x 80000))
+        ((>= x 5) (* x 70000))))
+
+(define (principal6)
+  (display "defina la cantidad de llantas compradas: ")
+  (newline)
+  (define x(read))
+  (display "total a pagar: ")
+  (preciollanta x)
+  )
+
+
+
+
+;problema 7
+
+(define (com x y)
+  (cond ((= x y) (* x y))
+        ((> x y) (- x y))
+        ((< x y) (+ x y))))
+
+(define (principal7)
+  (begin
+    (display "defina un número: ")
+    (define x(read))
+    (display "defina otro número: ")
+    (define y(read))
+    (com x y)))
+
+
+
+
+;problema 8
+
+(define (mayor3 x y z)
+  (cond ((> x y) (cond ((> x z) x)
+                       (else z)))
+        ((< x y) (cond ((> y z) y)
+                       (else z)))))
+
+
+(define (principal8)
+  (begin
+    (display "defina un número: ")
+    (define x(read))
+    (display "defina un número: ")
+    (define y(read))
+    (display "defina un número: ")
+    (define z(read))
+    (mayor3 x y z)))
+
+
+
+
+;problema 9
+
+(define (datos n e s ec)
+  (cond ((< e 18) (displayln n) (display e))
+        ((>= e 18) (cond ((= ec 1) (displayln n) (displayln e) (displayln s) (displayln ec))
+                         ((= ec 2) (displayln "Inválido"))
+                         ((= ec 3) (displayln "Inválido"))))))
+
+(define (principal9)
+  (begin
+    (display "Digite su nombre: ")
+    (define n(read))
+    (display "Digite su edad: ")
+    (define e(read))
+    (display "Digite su sexo: 1 si es hombre, 2 si es mujer: ")
+    (define s(read))
+    (display "Digite su estado civil: 1 soltero, 2 casado, 3 union libre, ")
+    (define ec(read))
+    (datos n e s ec)))
+
+
+
+;problema 10
+
+(define (datos n e s ec)
+  (cond((>= e 18) (cond ((= ec 1) (cond ((= s 1) (displayln n) )))
+                        ((= ec 2) (cond ((= s 2) (displayln n) (displayln e))))
+                        ((= ec 3) (displayln "Inválido"))))))
+
+(define (principal10)
+  (begin
+    (display "Digite su nombre: ")
+    (define n(read))
+    (display "Digite su edad: ")
+    (define e(read))
+    (display "Digite su sexo: 1 si es hombre, 2 si es mujer: ")
+    (define s(read))
+    (display "Digite su estado civil: 1 soltero, 2 casado, 3 union libre, ")
+    (define ec(read))
+    (datos n e s ec)))
+
+
+;Problema 11
+
+(define (edad x)
+  (cond
+    ((= x 1) (display "adulta"))
+    ((= x 2) (display "joven"))
+    ((= x 3) (display "un niño"))))
+
+
+(define (principal11)
+  (begin
+    (display "defina edad: ")
+    (define x (read))
+    (display "la persona es ")
+    (edad x)))
+(define (matricula x y z)
+  (cond
+    ((and(>= y 2000000)(>= z 3)) (+ (* y 0.03)x))
+    (else x)))
+
+;Problema 12
+
+(define (seguro x )
+  (cond ((< x 500000) (+ x (* x 0.03)))
+        (else (+ x (* x 0.02)))
+        )
+  )
+(define (principal12)
+  (begin
+    (display "Ingrese el precio del seguro: ")
+    (newline)
+    (define x (read))
+    (display "El precio es: ")
+    (display (seguro x))
+    )
+  )
+
+;Problema 13
+
+(define (matricula x y z)
+  (cond
+    ((and(>= y 2000000)(>= z 3)) (+ (* y 0.03)x))
+    (else x)))
+
+(define (principal13)
+  (begin
+    (displayln "valor de la matricula: ")
+    (define x 500000)
+    (displayln "valor del parimonio: ")
+    (define y (read))
+    (displayln "estrato: ")
+    (define z (read))
+    (displayln "el valor de la matricula es: ")
+    (matricula x y z)))
+
+;Problema 14
+
+(define (facturacion x y z)
+  (begin
+    (cond ((<= y 2)(display "señor/a ")(display x)(display " usted debera pagar: ")(+ 80000 (* (/ 80000 100) 5))))
+    (cond ((= y 3)(display "señor/a ")(display x)(display " usted debera pagar: ")(+ 80000 (* (/ 80000 100) 10))))
+    (cond ((= y 4)(display "señor/a ")(display x)(display " usted debera pagar: ")(+ 80000 (* (/ 80000 100) 10))))
+    (cond ((>= y 5)(display "señor/a ")(display x)(display " usted debera pagar: ")(+ 80000 (* (/ 80000 100) 20))))
+    )) 
+(define (principal14)
+  (begin
+    (display "ingrese en orden, su nombre, su estrato, y su direccion : ")
+    (facturacion (read)(read)(read))
+    ))
+
+;Problema 15
+
+(define (precio x y)
+  (cond
+    ((and(>= x 1000000)(= y 1)) (- x (* 0.15 x)))
+    ((>= x 1000000) (- x (* 0.1 x)))
+    ((= y 1) (- x (* 0.05 x)))
+    ((< x 1000000) (+ x (* 0.19 x)))))
+
+(define (principal15)
+  (begin
+    (display "valor del computador: ")
+    (define x (read))
+    (display "digite la marca del computador: 1 si es ABACO, 2 si es asus, 3 si es otra: ")
+    (define y (read))
+    (display "el precio final es: ")
+    (precio x y)))
+
+;Problema 16
+
+(define(exd h)
+  (- h 48)
+  )
+(define(calc h)
+  (cond((<= h 48)
+     (display(* h 50000))
+     ))
+  (cond((> h 48)
+     (cond((> (exd h) 8)
+        (display (+(+(*(- (exd h) 8)(* 50000 3))(* 8 (* 50000 2)))(* (- h (exd h))50000)))
+        )
+      )
+     )
+       )
+  (cond((> h 48)
+     (cond((<= (exd h) 8)
+        (display (+(*(exd h)(* 50000 2))(* (- h (exd h))50000)))
+           )
+      )
+     )
+  )
+  )
+         
+(define(principal16)
+  (begin
+    (display "Ingrese el numero de horas trabajadas: ")
+    (define h(read))
+    (display "Los ingresos de esta semana son: ")
+    (calc h)
+    )
+  )
+
+;Problema 17
+
+(define (peras pc vc)
+  (cond ((< pc 2) (display vc))
+        ((and (>= pc 3) (<= pc 5)) (* vc 0.90))
+        ((and (>= pc 6) (<= pc 10)) (* vc 0.85))
+        (else (* vc 0.82))))
+
+(define (principal17)
+  (begin
+    (display "digite las peras compradas: ")
+    (define pc(read))
+    (display "digite el valor de la compra: ")
+    (define vc(read))
+    (display "Total a pagar com descuento: ")
+    (peras pc vc)))
+
+;Problema 18
+
+(define (salario x y)
+  (cond
+    ((< x 1) (+ y (* y 0.05)))
+    ((and(>= x 1)(< x 2)) (+ y (* y 0.07)))
+    ((and(>= x 2)(< x 5)) (+ y (* y 0.1)))
+    ((and(>= x 5)(< x 10)) (+ y (* y 0.15)))
+    ((>= x 10) (+ y (* y 0.2)))))
+
+(define (principal18)
+  (begin
+    (display "defina años: ")
+    (define x (read))
+    (display "defina salario: ")
+    (define y (read))
+    (display "salario con utlidades: ")
+    (salario x y)))
+
+;Problema 19
+
+(define (cant_llantas x)
+  (cond((< x 5)(* x 30000))
+       ((and(> x 5)(<= x 10))(* x 25000))
+       ((> x 10)(* x 20000))
+       )
+  )
+                       
+(define (principal19)
+  (begin
+    (display "digite la cantidad de llantas: ")
+    (define x (read))
+    (display "El costo total de las llantas, seria: ")
+    (cant_llantas x)
+    )
+  )
+
+;Problema 20
+
+(define(opcion1 s t e n v)
+  (cond((and(and(= s 2)(= t 1))(and(>= e 35)(<= e 45))) (* v 3))
+       ((and(and(= s 1)(= t 3))(and(<= e 30)(= n 1)) (/ v 3)))
+       ((and(and(= s 2)(= n 3))(>= e 55)) (- v 50000))
+       )
+  )
+
+
+
+(define(principal20)
+  (begin
+    (displayln "Ingrese la edad: ")
+    (define e(read))
+    (newline)
+    (displayln "Ingrese sexo, 1 si es hombre , 2 si es mujer: ")
+    (define s(read))
+    (newline)
+    (displayln "Ingrese tipo, 1 si es alto, 2 si es bajo, 3 si es medio ")
+    (define t(read))
+    (newline)
+    (displayln "Ingrese nacionalidad, 1 si es latino, 2 si es alemán, 3 si es hindú, 4 si es colombiano ")
+    (define n(read))
+    (newline)
+    (display "Ingrese valor: ")
+    (define v(read))
+    (newline)
+    (displayln "El valor total es: ")
+    (opcion1 s t e n v)    
+    )
+  )
+
+
+
+
+(define(principal x)
+  (cond((= x 1)(principal1))
+       ((= x 2)(principal2))
+       ((= x 3)(principal3))
+       ((= x 4)(principal4))
+       ((= x 5)(principal5))
+       ((= x 6)(principal6))
+       ((= x 7)(principal7))
+       ((= x 8)(principal8))
+       ((= x 9)(principal9))
+       ((= x 10)(principal10))
+       ((= x 11)(principal11))
+       ((= x 12)(principal12))
+       ((= x 13)(principal13))
+       ((= x 14)(principal14))
+       ((= x 15)(principal15))
+       ((= x 16)(principal16))
+       ((= x 17)(principal17))
+       ((= x 18)(principal18))
+       ((= x 19)(principal19))
+       ((= x 20)(principal20))
+       )
+  )
+(define(tprincipal)
+  (begin
+    (display "Operacion que desea realizar: ")
+    (define x(read))
+    (principal x)
+    )
+  )
+(tprincipal)
